@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#131314">
+    <title>GeoQuiz Master</title>
+    
+    <!-- Favicon (Emoji) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet CSS & JS (For Map Mode) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import Map for Google GenAI SDK -->
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai"
+      }
+    }
+    </script>
+
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-3350052172661813"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-[#131314] text-[#E3E3E3] min-h-screen font-sans selection:bg-[#A8C7FA] selection:text-[#040404] overflow-x-hidden">
+    
+    <!-- Dynamic Animated Background -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#4285f4] rounded-full mix-blend-screen filter blur-[100px] opacity-10 animate-blob"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#34a853] rounded-full mix-blend-screen filter blur-[100px] opacity-5 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-[20%] left-[20%] w-[40%] h-[40%] bg-[#ea4335] rounded-full mix-blend-screen filter blur-[100px] opacity-5 animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="fixed inset-0 z-0 pointer-events-none opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E');"></div>
+
+    <!-- App Root -->
+    <div id="app" class="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 pb-24">
+        <!-- Content injected by JS -->
+    </div>
+
+    <!-- Ad Container -->
+    <div id="ad-container" class="ad-safe-zone">
+        <p class="text-[10px] text-[#8e918f] uppercase tracking-widest mb-2 font-medium">Advertisement</p>
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:50px"
+             data-ad-client="ca-app-pub-3350052172661813"
+             data-ad-slot="4134049998"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Main Logic -->
+    <script type="module" src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
